@@ -7,7 +7,14 @@ MILLIYET = "http://www.milliyet.com.tr/rss/rssNew/SonDakikaRss.xml"
 HURRIYET = "http://www.hurriyet.com.tr/rss/gundem"
 XKCD = "https://xkcd.com/rss.xml"
 CSSTRICKS = "https://css-tricks.com/feed/"
-
+BBC = "http://feeds.bbci.co.uk/news/video_and_audio/news_front_page/rss.xml?edition=uk"
+STEAM = "https://store.steampowered.com/feeds/newreleases.xml"
+HT = "https://www.haberturk.com/rss/manset.xml"
+RADIKAL = "http://www.radikal.com.tr/d/rss/RssSD.xml"
+CNNTURK = "https://www.cnnturk.com/feed/rss/all/news"
+GAMESPOT = "https://www.gamespot.com/feeds/mashup/" #! HORRIBLE
+ROCKPAPERSHOTGUN = "http://feeds.feedburner.com/RockPaperShotgun"
+KOTAKU = "https://kotaku.com/rss"
 
 newFetcher = Fetch()
 

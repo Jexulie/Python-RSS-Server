@@ -13,10 +13,16 @@ class Fetch(object):
     def fetchAll(self):
         dataList = []
         for url in self.URL_LIST:
-            data = urlopen(url)
-            dataList.append(data.read())
+            try:
+                data = urlopen(url)
+                dataList.append(data.read())
+            except:
+                pass
         return dataList
 
     def fetchOne(self, url):
-        data = urlopen(url)
-        return data.read()
+        try:
+            data = urlopen(url)
+            return data.read()
+        except:
+            return None
