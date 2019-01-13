@@ -2,27 +2,26 @@ from urllib.request import Request, urlopen
 
 class Fetch(object):
 
-    URL_LIST = []
-
-    def __init__(self):
-        pass
-
-    def addURL(self, url):
-        self.URL_LIST.append(url)
+    REQHEADER = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.3'
+    }
     
-    def fetchAll(self):
+    def fetchAll(self, urlList):
         dataList = []
-        for url in self.URL_LIST:
+        for elem in urlList:
             try:
-                data = urlopen(url)
-                dataList.append(data.read())
-            except:
-                pass
+                req = Request(elem['url'], headers=self.REQHEADER)
+                data = urlopen(req)
+                dataList.append({'url': elem['url'], 'cid': elem['cid'], 'xml': data.read()})
+            except Exception as err:
+                print(err)
         return dataList
 
     def fetchOne(self, url):
         try:
-            data = urlopen(url)
+            req = Request(url, headers=self.REQHEADER)
+            data = urlopen(req)
             return data.read()
-        except:
+        except Exception as err:
+            print(err)
             return None
